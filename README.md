@@ -25,7 +25,7 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
 SELECT constraint_name, table_name, column_name, ordinal_position
 FROM information_schema.key_column_usage WHERE table_name = 'tableName';
 ```
-![alt text](image1.png)
+![alt text](images/image1.png)
 
 ### Stored procedures
 #### Create a stored procedure
@@ -46,13 +46,13 @@ ON      pronamespace = pg_namespace.oid
 WHERE   nspname = 'public' --- specify the schema anme
 ORDER BY Proname;
 ```
-![alt text](image2.png)
+![alt text](images/image2.png)
 
 #### Get the inner SQL code of a procedure
 ```sql
 SELECT prosrc FROM pg_proc WHERE proname = 'procedure_name';
 ```
-![alt text](image3.png)
+![alt text](images/image3.png)
 
 #### Get the full creation code of a procedure
 ```sql
@@ -61,7 +61,7 @@ SELECT pg_get_functiondef((
   WHERE proname = 'procedure_name'
 ));
 ```
-![alt text](image4.png)
+![alt text](images/image4.png)
 
 ## Extensions
 
