@@ -1,6 +1,12 @@
 # PostgreSQL-practices
 PostgreSQL personal cheatsheets, pratical examples and solutions, application layer integration and usage
 
+## Navigation
+* [CheatSheets](#cheatsheets)
+  * [Constraints](#constraints)
+  * [Stored procedures](#stored-procedures)
+
+
 ## CheatSheets
 
 ### Constraints
