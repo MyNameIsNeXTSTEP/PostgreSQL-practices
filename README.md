@@ -79,7 +79,7 @@ SELECT * FROM cron.job;
 ```sql
 SELECT cron.schedule('call-procedute-clear_expired_sessions', '1 * * * *', 'CALL clear_expired_sessions()'); --- every one minute
 ```
-> Note, that when a databse is inacgive (shutdown or else) - the jobs are not invoked,
+> Note, that when a databse is inactive (shutdown or else) - the jobs are not invoked,
 > therefore for a certain situations need to use some other mechanisms to control a job call or deal with unhandled data by it.
 
 #### Unschedule a job
