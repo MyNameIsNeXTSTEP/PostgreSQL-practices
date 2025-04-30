@@ -13,6 +13,7 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
   * [Stored procedures](#stored-procedures)
 * [Extensions](#extensions)
   * [pg_cron](#pg_cron)
+    * [List all scheduled jobs](#list-all-scheduled-jobs)
     * [Schedule a cronjob call](#schedule-a-cronjob-call)
     * [Installing via Docker](#installing-via-docker)
 
@@ -67,6 +68,11 @@ SELECT pg_get_functiondef((
 
 ### pg_cron
 Link to the extension - https://github.com/citusdata/pg_cron
+#### List all scheduled jobs
+```sql
+SELECT * FROM cron.job;
+```
+
 #### Schedule a cronjob call
 ```sql
 SELECT cron.schedule('call-procedute-clear_expired_sessions', '1 * * * *', 'CALL clear_expired_sessions()'); --- every one minute
