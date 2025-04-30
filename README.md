@@ -15,6 +15,8 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
   * [pg_cron](#pg_cron)
     * [List all scheduled jobs](#list-all-scheduled-jobs)
     * [Schedule a cronjob call](#schedule-a-cronjob-call)
+    * [Unschedule a job](#unschedule-a-job)
+    * [View completed jobs](#view-completed-jobs)
     * [Installing via Docker](#installing-via-docker)
 
 
@@ -76,6 +78,20 @@ SELECT * FROM cron.job;
 #### Schedule a cronjob call
 ```sql
 SELECT cron.schedule('call-procedute-clear_expired_sessions', '1 * * * *', 'CALL clear_expired_sessions()'); --- every one minute
+```
+
+#### Unschedule a job
+```sql
+-- By using a `jobname`
+SELECT cron.unschedule('sql-job-name');
+
+-- By usin a `jobid`
+SELECT cron.unschedule(1);
+```
+
+#### View completed jobs
+```sql
+SELECT * FROM cron.job_run_details ORDER by start_time DESC LIMIT 5;
 ```
 
 #### Installing via Docker
