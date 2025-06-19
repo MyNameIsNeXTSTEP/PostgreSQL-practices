@@ -5,6 +5,7 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
 * [CheatSheets](#cheatsheets)
   * [Constraints](#constraints)
     * [Get constraints of a table](#get-constraints-of-a-table)
+    * [Drop constraints of a table](#drop-constraints-of-a-table)
   * [Stored procedures](#stored-procedures)
     * [Create a stored procedure](#create-a-stored-procedure)
     * [Get stored procedures names](#get-stored-procedures-names)
@@ -29,6 +30,11 @@ SELECT constraint_name, table_name, column_name, ordinal_position
 FROM information_schema.key_column_usage WHERE table_name = 'tableName';
 ```
 ![alt text](images/image1.png)
+
+#### Drop constraints of a table
+```sql
+ALTER TABLE "table_name" DROP CONSTRAINT "constraint_name";
+```
 
 ### Stored procedures
 #### Create a stored procedure
