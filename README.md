@@ -3,6 +3,8 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
 
 ## Navigation
 * [CheatSheets](#cheatsheets)
+  * [Columns](#columns)
+    * [Get columns types](#get-columns-types)
   * [Constraints](#constraints)
     * [Get constraints of a table](#get-constraints-of-a-table)
     * [Drop constraints of a table](#drop-constraints-of-a-table)
@@ -23,6 +25,16 @@ PostgreSQL personal cheatsheets, pratical examples and solutions, application la
 
 
 ## CheatSheets
+
+### Columns
+#### Get columns types
+```sql
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_name = 'youre_table_name'
+  AND table_schema = 'public' -- specify your schema if it is not public
+ORDER BY ordinal_position;
+```
 
 ### Constraints
 #### Get constraints of a table
